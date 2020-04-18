@@ -36,6 +36,10 @@ body {
   background-repeat: no-repeat;
   min-height: 100vh; }
 
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-grey-dark-1); }
+
 .container {
   max-width: 120rem;
   margin: 8rem auto;
