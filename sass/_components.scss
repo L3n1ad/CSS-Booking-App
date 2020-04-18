@@ -3,51 +3,124 @@
 
 .logo {
     height: 3.25rem;
+    margin-left: 2rem;
 }
 
 /////////////////////////
 // SEARCH BOX
 .search {
-    &__input {
+    flex: 0 0 40%;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__input {
+        // its needs to set inherit cause input doesn't inherit it automatically
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        background-color: var(--color-grey-light-2);
+        border: none;
+        padding: .7rem 2rem;
+        // high number just to have to rounded edges
+        border-radius: 100px;
+        width: 90%;
+        transition: all .2s;
+        margin-right: -3.5rem;
+
+        &:focus {
+            outline: none;
+            width: 100%;
+            background-color: var(--color-grey-light-3);
+        }
+
+        // to select the placeholder of the input its webkit so work only in chrome and safari
+        &::-webkit-input-placeholder {
+            font-weight: 100;
+            color: var(--color-grey-light-4);
+        }
+    }
+
+    // select the button when the input is in focus to adjust its background color
+    &__input:focus + &__button {
+        background-color: var(--color-grey-light-3);
     }
 
     &__button {
+        border: none;
+        background-color: var(--color-grey-light-2);
 
+        &:focus {
+            outline:none;
+        }
+
+        &:active {
+            transform: translateY(2px);
+        }
     }
 
     &__icon {
         height: 2rem;
         width: 2rem;
+        // fill is to color svg icons 
+        fill:var(--color-grey-dark-3)
     }
 }
 
 /////////////////////////
 // USER NAV
 .user-nav {
-    &__icon-box {
+    align-self: stretch;
 
+    display: flex;
+    align-items: center;
+
+    // all direct childrens of user-nav
+    & > * {
+        padding: 0 2rem;
+        cursor: pointer;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    & > *:hover {
+        background-color: var(--color-grey-light-2);
+    }
+
+    &__icon-box {
+       position: relative;
     }
 
     &__icon {
         height: 2.25rem;
         width: 2.25rem;
+        fill: var(--color-grey-dark-2);
     }
 
     &__notification {
+        font-size: .8rem;
+        height: 1.75rem;
+        width: 1.75rem;
+        border-radius: 50%;
+        background-color: var(--color-primary);
+        color: #fff;
+        position: absolute;
+        top: 1.5rem;
+        right: 1.1rem;
 
-    }
-
-    &__user {
-
+        // center the text
+        display: flex;
+        // horizontally
+        justify-content: center;
+        // vertically
+        align-items: center;
     }
 
     &__user-photo{
         height: 3.75rem;
         border-radius: 75%;
-    }
-
-    &__user-name {
-
+        margin-right: 1rem;
     }
 }
