@@ -252,21 +252,38 @@
         fill: var(--color-primary);
     }
 
+    &__icon-location {
+        margin-right: .5rem;
+    }
+
     &__location {
-        // display: flex;
-        // justify-content: center;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
     }
 
     &__rating {
+        background-color: var(--color-primary);
+        margin-left: 3rem;
+        color: #fff;
+        align-self: stretch;
+        padding:  1.5rem 2.25rem;
 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     &__rating-average {
-
+        font-size: 2.25rem;
+        font-weight: 300;
+        margin-bottom: .5rem;
     }
 
     &__rating-count {
-
+        font-size: .8rem;
+        text-transform: uppercase;
     }
 
 
