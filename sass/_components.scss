@@ -207,3 +207,90 @@
     text-align: center;
     padding: 2.5rem;
 }
+
+/////////////////////////
+// GALLERY
+
+.gallery {
+    display: flex;
+
+    &__photo {
+        width: 100%;
+        // img should be always inline-block or block to avoid white space in the bottom
+        display: block;
+    }
+}
+
+/////////////////////////
+// HOTEL REVIEW
+
+.overview {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--color-grey-light-2);
+
+    &__heading {
+        font-size: 2.25rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 1.5rem 3rem;
+    }
+
+    &__stars {
+        // flex: 1;
+        // it is a better solution because the element will occupy only the width to takes up not till the next element as flex: 1; would do (maybe do some research its working only in flex box
+        margin-right: auto;
+        // to align svg because otherwise they would have a bit of a space on the bottom
+        display: flex;
+    }
+
+    &__icon-star,
+    &__icon-location {
+        width: 1.75rem;
+        height: 1.75rem;
+        fill: var(--color-primary);
+    }
+
+    &__location {
+        display: flex;
+    }
+
+    &__rating {
+
+    }
+
+    &__rating-average {
+
+    }
+
+    &__rating-count {
+
+    }
+
+
+}
+
+/////////////////////////
+// INLINE BUTTON
+
+
+.btn-inline {
+    border: none;
+    color: var(--color-primary);
+    // to make sure that in multiple use cases it will have the font-size of the parent element
+    font-size: inherit;
+    // current color to have the same color as the text
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+    display: inline-block;
+    background-color: transparent;
+    cursor: pointer;
+    transform: all .2s;
+
+    &:hover {
+        // because of currentColor the border will adjust
+        color: var(--color-grey-dark-1);
+    }
+}
+
