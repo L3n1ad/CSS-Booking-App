@@ -26,6 +26,9 @@
 
 .sidebar {
     background-color: var(--color-grey-dark-1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
 // first value grow, second shrink, third bases
     flex: 0 0 18%;
@@ -33,7 +36,10 @@
 
 .hotel-view {
     background-color: #fff;
+
+    // ONLY FOR TESTING
     background-color: orangered;
+    height: 80rem;
 
     // it will grow and occupy all the space it has
     flex: 1;
