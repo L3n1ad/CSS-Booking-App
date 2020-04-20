@@ -12,7 +12,7 @@
     font-size: 1.4rem;
     height: 7rem;
     background-color: #fff;
-    border-bottom: var(--color-grey-light-2);
+    border-bottom: 1px solid var(--color-grey-light-2);
 
     // to put everything side by side
     display: flex;
@@ -36,9 +36,9 @@
 
 .hotel-view {
     background-color: #fff;
+    
 
     // ONLY FOR TESTING
-    background-color: orangered;
     height: 80rem;
 
     // it will grow and occupy all the space it has
