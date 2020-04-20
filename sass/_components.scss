@@ -129,16 +129,70 @@
 // SIDE NAV
 
 .side-nav{
+    font-size: 1.4rem;
+    list-style: none;
+    margin-top: 3.5rem;
 
     &__item {
+       position: relative;
+
+       &:not(:last-child){
+           margin-bottom: .5rem;
+       }
 
     }
-    &__link {
 
+    &__item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 3px;
+        background-color: var(--color-primary);
+        transform: scaleY(0);
+        // it tells the transformation where to start from default is center
+        // transform-origin: bottom;
+        // we can give transitions to different properties in this case to width
+        // first .4s means it will take that long second .2s means it will be delayed by 2s
+        // cubic-bezier define the animation speed and curve
+        transition: transform .2s,
+                    width .4s cubic-bezier(1,0,0,1) .2s,
+                    background-color .1s;
     }
+
+
+    &__item:hover::before,
+    &__item--active::before {
+        transform: scaleY(1);
+        width: 100%;
+    }
+
+    // the selector means when item is active(so clicked) to this with the before element
+    &__item:active::before {
+        background-color: var(--color-primary-light);
+    }
+
+    &__link:link,
+    &__link:visited {
+        color:var(--color-grey-light-1);
+        text-decoration: none;
+        font-weight: 100;
+        text-transform: uppercase;
+        display: block;
+        padding: 1.5rem 3rem;
+        display: flex;
+        align-items: center;
+        // z index only works if we have a position specified 
+        position: relative;
+        z-index: 10;
+    }
+
     &__icon {
         width: 1.75rem;
         height: 1.75rem;
+        fill: currentColor;
+        margin-right: 2rem;
     }
 
 
