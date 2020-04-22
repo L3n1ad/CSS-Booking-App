@@ -436,19 +436,24 @@
         height: 1rem;
         width: 1rem;
         margin-right: .7rem;
-        // implementing svg icon with css (to make it easy we included the icon in img folder rather then using the sprite file)
-        // in this way we won't be able to manipulate the icon so change its color etc. therefore we will use masks
-        // For older browsers we can use the background cause masks not supported by them
-        // background-image: url(../img/chevron-thin-right.svg);
-        // background-size: cover;
 
         // for NEWER browsers we will use masks
         // It basically creates a background and it can be only seen where the background is which is in our case the logo
-        background-color: var(--color-primary);
-        -webkit-mask-image: url(../img/chevron-thin-right.svg);
-        -webkit-mask-size: cover;
-        mask-image: url(../img/chevron-thin-right.svg);
-        mask-size: cover;
+        @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+            background-color: var(--color-primary);
+            -webkit-mask-image: url(../img/chevron-thin-right.svg);
+            -webkit-mask-size: cover;
+            mask-image: url(../img/chevron-thin-right.svg);
+            mask-size: cover;
+            // to make sure it is working where its supported
+            background-image: none;
+        }
+
+        // implementing svg icon with css (to make it easy we included the icon in img folder rather then using the sprite file)
+        // in this way we won't be able to manipulate the icon so change its color etc. therefore we will use masks
+        // For older browsers we can use the background cause masks not supported by them
+        background-image: url(../img/chevron-thin-right.svg);
+        background-size: cover;
     }
 }
 
