@@ -542,6 +542,9 @@ body {
   padding: 2rem 7rem;
   font-size: 1.2rem;
   font-weight: 100; }
+  @media only screen and (max-width: 31.25em) {
+    .footer {
+      padding-bottom: 10rem; } }
   .footer__link:link, .footer__link:visited {
     text-decoration: none;
     color: var(--color-primary); }
