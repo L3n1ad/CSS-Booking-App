@@ -682,6 +682,9 @@
     font-size: 1.2rem;
     font-weight: 100;
 
+    @media only screen and (max-width: $bp-smallest) {
+        padding-bottom: 10rem;
+    }
 
     &__copyright {
 
