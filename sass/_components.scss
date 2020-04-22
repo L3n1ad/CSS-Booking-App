@@ -270,6 +270,11 @@
     align-items: center;
     border-bottom: var(--line);
 
+    @media only screen and (max-width: $bp-smallest){
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
     &__heading {
         font-size: 2.25rem;
         font-weight: 300;
@@ -281,6 +286,11 @@
             font-size: 1.8rem;
             padding: 1.25rem 2rem;
         }
+
+        @media only screen and (max-width: $bp-smallest){
+            padding: 1.5rem 1rem;
+        }
+        
     }
 
     &__stars {
@@ -289,6 +299,10 @@
         margin-right: auto;
         // to align svg because otherwise they would have a bit of a space on the bottom
         display: flex;
+
+        @media only screen and (max-width: $bp-smallest){
+            margin-right: 0;
+        }
     }
 
     &__icon-star,
@@ -306,6 +320,10 @@
         font-size: 1.2rem;
         display: flex;
         align-items: center;
+
+        @media only screen and (max-width: $bp-smallest){
+            margin-left: 1rem;
+        }
     }
 
     &__rating {

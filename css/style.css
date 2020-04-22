@@ -286,6 +286,10 @@ body {
   display: flex;
   align-items: center;
   border-bottom: var(--line); }
+  @media only screen and (max-width: 31.25em) {
+    .overview {
+      flex-wrap: wrap;
+      justify-content: space-between; } }
   .overview__heading {
     font-size: 2.25rem;
     font-weight: 300;
@@ -296,9 +300,15 @@ body {
       .overview__heading {
         font-size: 1.8rem;
         padding: 1.25rem 2rem; } }
+    @media only screen and (max-width: 31.25em) {
+      .overview__heading {
+        padding: 1.5rem 1rem; } }
   .overview__stars {
     margin-right: auto;
     display: flex; }
+    @media only screen and (max-width: 31.25em) {
+      .overview__stars {
+        margin-right: 0; } }
   .overview__icon-star, .overview__icon-location {
     width: 1.75rem;
     height: 1.75rem;
@@ -309,6 +319,9 @@ body {
     font-size: 1.2rem;
     display: flex;
     align-items: center; }
+    @media only screen and (max-width: 31.25em) {
+      .overview__location {
+        margin-left: 1rem; } }
   .overview__rating {
     background-color: var(--color-primary);
     margin-left: 3rem;
